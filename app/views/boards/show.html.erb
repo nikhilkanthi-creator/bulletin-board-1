@@ -11,7 +11,7 @@
       <%= @the_board.name %>
     </h1>
     <hr>
-
+<h2>Add a new post</h2>
         <form action="/insert_post" method="post">
       <div>
         <label for="title_box">
@@ -50,54 +50,28 @@
       </button>
     </form>
 
-    <dl>
-      <dt>
-        Name
-      </dt>
-      <dd>
-        <%= @the_board.name %>
-      </dd>
+  <hr>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_board.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_board.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
-</div>
-
-<hr>
+<h2>Active Posts</h2>
 
 
-<div>
-  <div>
-    <h2>
-      Edit board
-    </h2>
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Posted on</th>
+    <th>Expires on</th>
+  </tr>
 
-    <form action="/modify_board/<%= @the_board.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
+<h2>Expired Posts</h2>
 
-        <input type="text" id="name_box" name="query_name" value="<%= @the_board.name %>">
-      </div>
 
-      <button>
-        Update board
-      </button>
-    </form>
-  </div>
-</div>
-
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Posted on</th>
+    <th>Expires on</th>
+  </tr>
+  
 <hr>
